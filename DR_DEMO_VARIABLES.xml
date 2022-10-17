@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<uc-export clientvers="12.5.0+low.build.1601">
+<FolderStruct>
+<includeExternalObjects>0</includeExternalObjects>
+<FOLD name="DR_DEMO_VARIABLES" title="">
+<VARA id="1005163" link="0" name="VARA.AD.NETWORK"/>
+<VARA id="1003028" link="0" name="VARA.AD.READINESS"/>
+<VARA id="1005176" link="0" name="VARA.AD.REPLICATION"/>
+<VARA id="1002831" link="0" name="VARA.CISCO.READINESS"/>
+<VARA id="1002818" link="0" name="VARA.DR.MASTERCARD"/>
+<VARA id="1002819" link="0" name="VARA.DR.VISA"/>
+<VARA id="1005161" link="0" name="VARA.DRM.APPS"/>
+<VARA id="1005164" link="0" name="VARA.EXCH.NETWORK"/>
+<VARA id="1003029" link="0" name="VARA.EXCH.READINESS"/>
+<VARA id="1005175" link="0" name="VARA.EXCH.REPLICATION"/>
+<VARA id="1002820" link="0" name="VARA.IIS"/>
+<VARA id="1002822" link="0" name="VARA.IIS.DR"/>
+<VARA id="1002823" link="0" name="VARA.IIS.NETWORK"/>
+<VARA id="1002821" link="0" name="VARA.IIS.PROD"/>
+<VARA id="1005165" link="0" name="VARA.OTH.NETWORK"/>
+<VARA id="1003031" link="0" name="VARA.OTH.READINESS"/>
+<VARA id="1005174" link="0" name="VARA.OTH.REPLICATION"/>
+<VARA id="1005166" link="0" name="VARA.SG.NETWORK"/>
+<VARA id="1003030" link="0" name="VARA.SG.READINESS"/>
+<VARA id="1005173" link="0" name="VARA.SG.REPLICATION"/>
+<VARA id="1003027" link="0" name="VARA.SP.NETWORK"/>
+<VARA id="1005167" link="0" name="VARA.SP.READINESS"/>
+<VARA id="1005172" link="0" name="VARA.SP.REPLICATION"/>
+</FOLD>
+</FolderStruct>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.AD.NETWORK" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="DB_Server_1" Value="Database" Value1="DR" Value2="OK" Value3="xxxx" Value4=""/>
+<row Name="DB_Server_2" Value="Database" Value1="Production" Value2="FAIL" Value3="XXXX" Value4=""/>
+<row Name="DB_Server_2-DB_Server_1" Value="Database" Value1="Link" Value2="FAIL" Value3="NewURL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+<row Name="DB_Server_2-IIS_Server_2" Value="Database" Value1="Link" Value2="FAIL" Value3="NewURL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="DR" Value2="FAIL" Value3="URL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+<row Name="IIS_Server_2-IIS_Server_1" Value="Application" Value1="Link" Value2="FAIL" Value3="Network:Not Working" Value4=""/>
+<row Name="IIS_Server_3" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_4" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_5" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.AD.READINESS" replacementmode="2">
+<HEADER state="1">
+<Title>Readiness Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Site" Value1="PROD" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="DR_READINESS" Value1="Ready/Not Ready" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="DR_REPLICATION" Value1="Synced | Two-way Replication ON" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="RPO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="RTO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="LAST_DRILL_DATE" Value1="22-JUN-2020" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.AD.REPLICATION" replacementmode="2">
+<HEADER state="1">
+<Title>Replication Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Mount Point1" Value1="/dev/sda01" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="Last Synced " Value1="5 minutes ago" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="Next Sync" Value1="In 20 Min" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="Replica mode" Value1="Uni-directional" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="Health" Value1="Bleeding" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="Utlization" Value1="100%" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.CISCO.READINESS" replacementmode="2">
+<HEADER state="1">
+<Title>Readiness Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Site" Value1="PROD" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="DR_READINESS" Value1="Ready/Not Ready" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="DR_REPLICATION" Value1="Synced | Two-way Replication ON" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="RPO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="RTO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="LAST_DRILL_DATE" Value1="22-JUN-2020" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.DR.MASTERCARD" replacementmode="2">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables/>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.DR.VISA" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="appsrvr1" Value="Application" Value1="Production" Value2="OK" Value3="Server is in good health with x, y, z statistics" Value4=""/>
+<row Name="appsrvr1-drappsrvr1" Value="Application" Value1="Link" Value2="OK" Value3="Link is in good health with x, y, z statistics" Value4=""/>
+<row Name="appsrvr2" Value="Application" Value1="Production" Value2="OK" Value3="Server is in good health with x, y, z statistics" Value4=""/>
+<row Name="appsrvr2-drappsrvr1" Value="Application" Value1="Link" Value2="OK" Value3="Link is in good health with x, y, z statistics" Value4=""/>
+<row Name="dbsrvr1" Value="Database" Value1="Production" Value2="OK" Value3="Server is in good health with x, y, z statistics" Value4=""/>
+<row Name="dbsrvr1-drdbsrvr1" Value="Database" Value1="Link" Value2="OK" Value3="Link has bandwidth problem" Value4=""/>
+<row Name="drappsrvr1" Value="Application" Value1="DR" Value2="OK" Value3="Server is in good health with x, y, z statistics" Value4=""/>
+<row Name="drdbsrvr1" Value="Database" Value1="DR" Value2="OK" Value3="DB Server is offline" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.DRM.APPS" replacementmode="2">
+<HEADER state="1">
+<Title/>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="Active Directory" Value="0001011013" Value1="1005018" Value2="VARA.AD.REPLICATION" Value3="VARA.AD.NETWORK" Value4="VARA.AD.READINESS"/>
+<row Name="Cisco" Value="0001011013" Value1="1010015" Value2="VARA.SP.REPLICATION" Value3="VARA.SP.NETWORK" Value4="VARA.SP.READINESS"/>
+<row Name="Exchange" Value="0001011013" Value1="1010015" Value2="VARA.EXCH.REPLICATION" Value3="VARA.EXCH.NETWORK" Value4="VARA.EXCH.READINESS"/>
+<row Name="Others" Value="0001011013" Value1="1010015" Value2="VARA.OTH.REPLICATION" Value3="VARA.OTH.NETWORK" Value4="VARA.OTH.READINESS"/>
+<row Name="Security Gateway" Value="0001011013" Value1="1010015" Value2="VARA.SG.REPLICATION" Value3="VARA.SG.NETWORK" Value4="VARA.SG.READINESS"/>
+<row Name="Sharepoint" Value="0001011013" Value1="1010015" Value2="VARA.SP.REPLICATION" Value3="VARA.SP.NETWORK" Value4="VARA.SP.READINESS"/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.EXCH.NETWORK" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="DR" Value2="FAIL" Value3="URL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+<row Name="IIS_Server_2-IIS_Server_1" Value="Application" Value1="Link" Value2="FAIL" Value3="Network:Not Working" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.EXCH.READINESS" replacementmode="2">
+<HEADER state="1">
+<Title>Readiness Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Site" Value1="PROD" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="DR_READINESS" Value1="Ready/Not Ready" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="DR_REPLICATION" Value1="Synced | Two-way Replication ON" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="RPO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="RTO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="LAST_DRILL_DATE" Value1="22-JUN-2020" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.EXCH.REPLICATION" replacementmode="2">
+<HEADER state="1">
+<Title>Replication Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Mount Point1" Value1="/dev/sda01" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="Last Synced " Value1="5 minutes ago" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="Next Sync" Value1="In 20 Min" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="Replica mode" Value1="Uni-directional" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="Health" Value1="Bleeding" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="Utlization" Value1="100%" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.IIS" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_1-IIS_Server_2" Value="Application" Value1="Link" Value2="FAIL" Value3="Network:Not Working" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="DR" Value2="FAIL" Value3="URL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.IIS.DR" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="DR" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_1-IIS_Server_2" Value="Application" Value1="Link" Value2="OK" Value3="Network:Working fine" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="DR" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.IIS.NETWORK" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="ABC DEF HT" Value4=""/>
+<row Name="IIS_Server_1-IIS_Server_2" Value="Application" Value1="Link" Value2="OK" Value3="Network:Working fine" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.IIS.PROD" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_1-IIS_Server_2" Value="Application" Value1="Link" Value2="OK" Value3="Network:Working fine" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.OTH.NETWORK" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_1-IIS_Server_2" Value="Application" Value1="Link" Value2="FAIL" Value3="Network:Not Working" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="DR" Value2="FAIL" Value3="URL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.OTH.READINESS" replacementmode="2">
+<HEADER state="1">
+<Title>Readiness Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Site" Value1="PROD" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="DR_READINESS" Value1="Ready/Not Ready" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="DR_REPLICATION" Value1="Synced | Two-way Replication ON" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="RPO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="RTO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="LAST_DRILL_DATE" Value1="22-JUN-2020" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.OTH.REPLICATION" replacementmode="2">
+<HEADER state="1">
+<Title>Replication Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Mount Point1" Value1="/dev/sda01" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="Last Synced " Value1="5 minutes ago" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="Next Sync" Value1="In 20 Min" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="Replica mode" Value1="Uni-directional" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="Health" Value1="Bleeding" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="Utlization" Value1="100%" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.SG.NETWORK" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="DR" Value2="FAIL" Value3="URL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+<row Name="IIS_Server_2-IIS_Server_1" Value="Application" Value1="Link" Value2="FAIL" Value3="Network:Not Working" Value4=""/>
+<row Name="IIS_Server_3" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_4" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_5" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.SG.READINESS" replacementmode="2">
+<HEADER state="1">
+<Title>Readiness Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Site" Value1="PROD" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="DR_READINESS" Value1="Ready/Not Ready" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="DR_REPLICATION" Value1="Synced | Two-way Replication ON" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="RPO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="RTO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="LAST_DRILL_DATE" Value1="22-JUN-2020" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.SG.REPLICATION" replacementmode="2">
+<HEADER state="1">
+<Title>Replication Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Mount Point1" Value1="/dev/sda01" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="Last Synced " Value1="5 minutes ago" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="Next Sync" Value1="In 20 Min" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="Replica mode" Value1="Uni-directional" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="Health" Value1="Bleeding" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="Utlization" Value1="100%" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.SP.NETWORK" replacementmode="2">
+<HEADER state="1">
+<Title>Graph Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="IIS_Server_1" Value="Application" Value1="Production" Value2="OK" Value3="URL:Accessible, IIS:Working, Server:Running" Value4=""/>
+<row Name="IIS_Server_1-IIS_Server_2" Value="Application" Value1="Link" Value2="FAIL" Value3="Network:Not Working" Value4=""/>
+<row Name="IIS_Server_2" Value="Application" Value1="DR" Value2="FAIL" Value3="URL:Accessible, IIS:Working, Server:Not Running" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.SP.READINESS" replacementmode="2">
+<HEADER state="1">
+<Title>Readiness Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Site" Value1="PROD" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="DR_READINESS" Value1="Ready/Not Ready" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="DR_REPLICATION" Value1="Synced | Two-way Replication ON" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="RPO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="RTO" Value1="30" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="LAST_DRILL_DATE" Value1="22-JUN-2020" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+<VARA OVD_VRName="FREI" data_type="STATIC" name="VARA.SP.REPLICATION" replacementmode="2">
+<HEADER state="1">
+<Title>Replication Variables</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType>STATIC</OH_SubType>
+</HEADER>
+<ATTR_VARA state="1">
+<Type>C|Text</Type>
+<lblSource>Static</lblSource>
+<source>STATIC</source>
+<VRName>FREI|Freely selected</VRName>
+<NotFoundErr>0</NotFoundErr>
+<NotFoundDef>1</NotFoundDef>
+<ShareN>0</ShareN>
+<ShareL>0</ShareL>
+<ShareR>0</ShareR>
+<MaxValue_C>1024</MaxValue_C>
+<CheckMax_C>0</CheckMax_C>
+<uppercase>0</uppercase>
+<sortColumn>0</sortColumn>
+<sortDirection>0</sortDirection>
+<HostType/>
+</ATTR_VARA>
+<VARA state="1">
+<Variables>
+<row Name="01" Value="Mount Point1" Value1="/dev/sda01" Value2="" Value3="" Value4=""/>
+<row Name="02" Value="Last Synced " Value1="5 minutes ago" Value2="" Value3="" Value4=""/>
+<row Name="03" Value="Next Sync" Value1="In 20 Min" Value2="" Value3="" Value4=""/>
+<row Name="04" Value="Replica mode" Value1="Uni-directional" Value2="" Value3="" Value4=""/>
+<row Name="05" Value="Health" Value1="Bleeding" Value2="" Value3="" Value4=""/>
+<row Name="06" Value="Utlization" Value1="100%" Value2="" Value3="" Value4=""/>
+</Variables>
+</VARA>
+<DOCU_Docu state="1" type="text">
+<DOC/>
+</DOCU_Docu>
+</VARA>
+</uc-export>
