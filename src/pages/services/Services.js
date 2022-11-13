@@ -238,14 +238,18 @@ export default function Services(props) {
 
     for (var i = 0; i < history.length; i++) {
       history[i].id = i;
-      // if (history[i].runtime === "NaN" ) {
-      //   history[i].rtoStatus = "";}
-      // else
-      history[i].rtoStatus= ((history[i].runtime/60).toFixed(2) < history[i].archive_key1)
+      console.log("History "+ history[i].runtime);
+      if (history[i].runtime === undefined ) {
+        history[i].rtoStatus = "Calculating";
+      } else if ((history[i].runtime/60).toFixed(2) < history[i].archive_key1) {
+        history[i].rtoStatus = "Fullfilled";
+      } else if ((history[i].runtime/60).toFixed(2) > history[i].archive_key1){
+        history[i].rtoStatus = "Violated";
+      }
+      
+      // history[i].rtoStatus= ((history[i].runtime/60).toFixed(2) < history[i].archive_key1)
       
     }
-
-
     setHistory(history);
   };
 

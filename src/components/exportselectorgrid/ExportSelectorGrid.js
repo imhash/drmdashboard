@@ -67,7 +67,7 @@ const columns = [
     width: 150,
   
     renderCell: (rtoStatus) => (
-    <Chip label={rtoStatus ? "FULFILLED": "VIOLATED"} color={rtoStatus ? "success": "warning"}/>
+    <Chip label={rtoStatus.value} color={rtoStatus.value ==="Fullfilled" ? "success": (rtoStatus.value ==="Calculating" ? "primary": "warning")}/>
     // // <Chip label={(run_time.value/60).toFixed(2) > slo_time ? "FULFILLED": "VIOLATED"} color={(run_time.value/60).toFixed(2) < slo_time ? "success": "warning"}/>
 
     )

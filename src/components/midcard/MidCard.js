@@ -101,7 +101,7 @@ export default function Midcard(props) {
   
   var run_time = (props.data.runtime/60).toFixed(2);
   var slo_time = props.data.archive_key1
-
+  console.log("runtime" + run_time);
   // {(props.data.runtime/60).toFixed(2)} min(s)
   // let successCount = props.data.filter((x) => x.status >= 1900).length;
   // let successPercent = (successCount / props.work.length) * 100;
@@ -166,7 +166,8 @@ export default function Midcard(props) {
             </Grid>
             <Grid container  direction="row" alignItems="center">
             <FlagTwoToneIcon /><b>Execution Summary:</b>  &nbsp;&nbsp; 
-            {props.isLoaded && <Chip label={run_time < slo_time ? "FULFILLED": "VIOLATED"} color={run_time < slo_time ? "success": "warning"} size="small"/>}
+            {props.isLoaded && <Chip label={run_time=="NaN" ? "Calculating" : (run_time < slo_time ? "FULFILLED": "VIOLATED")} 
+            color={run_time=="NaN" ? "primary" : (run_time < slo_time ? "success": "warning")} size="small"/>}
             </Grid>
             <Grid container  direction="row" alignItems="center">
             <FlagTwoToneIcon /><b>Status:</b>  &nbsp;&nbsp;{props.data.status_text}

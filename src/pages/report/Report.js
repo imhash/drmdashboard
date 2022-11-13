@@ -52,10 +52,8 @@ export default function Report(){
               runId,
             options
           );
-
-            setIsLoaded(true);
             setExecution1(response.data);
-            
+            setIsLoaded(true);
           }
      const loadChildren1 = async () => {
           const options = {
