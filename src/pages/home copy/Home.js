@@ -91,14 +91,13 @@ return (
   variant="h6"
  component="h1"
  align="center"
- 
  // style={{ background: '#8b0000' , color: "#f2f2f2"}}
  // style={{ paddingLeft: "20px" }}
 >
 <b>CRITICAL BUSINESS APPS</b>
 </Typography>
 </Grid>
-<Grid container rowSpacing={1} spacing={5} style={{ padding:20 }}
+<Grid container rowspacing={1} spacing={5} style={{ padding:20 }}
 >
 
 

@@ -3,11 +3,9 @@ import GoogleMapsComponent from './mapcomponent/GoogleMapsComponent';
 import ReadinessComponent from './readinesstable/ReadinessTable';
 import ReplicationComponent from './replicationtable/ReplicationTable';
 import Canvas from './canvas/Canvas';
-import LinearProgressWithLabel from './linearprogresswithlabel/LinearProgressWithLabel';
 import ColorAlerts from './coloralerts/ColorAlerts';
 import ExecutionCard1 from './executioncard1/ExecutionCard1';
 import ExecutionCard2 from './executioncard2/ExecutionCard2';
-
 import SimplePopover from './simplepopover/SimplePopover';
 import PieChart from './piechart/PieChart';
 import Variants from './variants/Variants';
@@ -20,14 +18,16 @@ import ExportSelectorGrid from './exportselectorgrid/ExportSelectorGrid';
 import HeadCard from './headcard/Headcard';
 import MidCard from './midcard/MidCard';
 import FootCard from './footcard/FootCard';
-// import useGlobalSettings from './hooks/useGlobalSettings';
+import Usercard from './usercard/Usercard';
+import BeforeCard from './beforecard/BeforeCard';
+import AfterCard from './aftercard/AfterCard';
+
 export {
     AppBar,
     GoogleMapsComponent, 
     ReadinessComponent,
     ReplicationComponent,
     Canvas,
-    // LinearProgressWithLabel,
     ColorAlerts,
     ExecutionCard1,
     ExecutionCard2,
@@ -43,5 +43,8 @@ export {
     MidCard,
     FootCard,
     Tileview,
+    Usercard,
+    BeforeCard,
+    AfterCard,
     
 }

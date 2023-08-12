@@ -7,8 +7,6 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { Services } from "../../pages";
-import axios from "axios";
 const useStyles = makeStyles({
   table: {
     minWidth: 650,

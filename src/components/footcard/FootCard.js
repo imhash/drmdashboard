@@ -16,12 +16,26 @@ import Paper from "@material-ui/core/Paper";
 import Chip from '@mui/material/Chip';
 import Grid from "@material-ui/core/Grid";
 import moment from 'moment-timezone';
-
+import {
+  
+  GridToolbarContainer,
+  GridToolbarExport,
+  gridClasses,
+} from '@mui/x-data-grid';
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
+
+
+function CustomToolbar() {
+  return (
+    <GridToolbarContainer className={gridClasses.toolbarContainer}>
+      <GridToolbarExport />
+    </GridToolbarContainer>
+  );
+}
 export default function FootCard(props) {
 
   // var start_temp_time = new Date(props.data.start_time);
@@ -54,23 +68,26 @@ const classes = useStyles();
   <Grid>
 
     <Typography
-         variant="h6"
+         variant="subtitle1"
                 component="h1"
                 align="center"
-                color="#4a54f1"   
     // style={{ background: '#8b0000' , color: "#f2f2f2"}}
     // style={{ paddingLeft: "20px" }}
-  >
+    style={{ fontFamily: 'Montserrat, sans-serif'}}>
    EXECUTION STEPS
   </Typography>
 
-<Grid style={{ padding:20 }}>
-    <div style={{ height: 500, width: '100%' }}>
+<Grid style={{ padding:50 }}>
+    <div style={{ height: "100%", width: '100%' }}>
  
     
     
    {/* <Paper variant='elevation'> */}
-     {props.data==null? null : <DataGrid rows={props.data} columns={columns} autoPageSize />}
+     {props.data==null? null : <DataGrid autoHeight rows={props.data} columns={columns} initialState={{
+    pagination: {
+      paginationModel: { pageSize: 25, page: 0 },
+    },
+  }} />}
      {/* </Paper> */}
   
     </div>
@@ -85,16 +102,16 @@ const columns = [
     {
       field: 'title',
       headerName: 'Step Name',
-      width: 200,
+      width: 300,
       editable: false,
     },
-    {
-      field: 'name',
-      headerName: 'Object Name',
-      width: 200,
-      type: 'date',
-      editable: false,
-    },
+    // {
+    //   field: 'name',
+    //   headerName: 'Object Name',
+    //   width: 200,
+    //   type: 'date',
+    //   editable: false,
+    // },
     {
       field: 'start_time',
       headerName: 'Start Time',
@@ -123,7 +140,7 @@ const columns = [
       field: 'runtime',
       headerName: 'Duration (Min.)',
       type: 'text',
-      width: 110,
+      width: 150,
       renderCell: (runtime) => {
         return (
           <div>
@@ -138,24 +155,25 @@ const columns = [
         headerName: 'Status Code',
         type: 'text',
         width: 300,
-      },
-    
-    {
-        field: 'status',
-        headerName: 'Status',
-        type: 'text',
-        width: 200,
-     
-        renderCell: (runtime,) => {
-          return (
-            <div
-
-            >
-                  <Chip label={runtime.value == 1900 ? "OK": "Pending"} color={runtime.value == 1900 ?"success": "warning"}/>
-            </div>
-          );
-        }
       }
+    //   ,
+    
+    // {
+    //     field: 'status',
+    //     headerName: 'Status',
+    //     type: 'text',
+    //     width: 200,
+     
+    //     renderCell: (runtime,) => {
+    //       return (
+    //         <div
+
+    //         >
+    //               <Chip label={runtime.value == 1900 ? "OK": "Pending"} color={runtime.value == 1900 ?"success": "warning"}/>
+    //         </div>
+    //       );
+    //     }
+    //   }
         ];
   
         

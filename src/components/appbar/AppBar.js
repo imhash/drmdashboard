@@ -148,7 +148,7 @@ export default function MainAppBar(props) {
         <Divider />
         <List>
           {['Home', 'Services'].map((text, index) => (
-            <ListItem button key={text} onClick={() => history.push("/"+text)}>
+            <ListItem button key={text} onClick={() => history.push("/dr-dashboard/"+text)}>
               <ListItemIcon>{index === 0 ?  (<AssessmentIcon />) : index  === 1 ? (<AppsIcon /> ): (<AssessmentIcon />)}</ListItemIcon>
          
               <ListItemText primary={text} />

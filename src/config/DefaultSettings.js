@@ -1,9 +1,9 @@
 
 export  const Config = {
     //base_url: 'http://localhost:8088/ae/api/v1'
-   base_url:  'http://lvnkdev001765.bpc.broadcom.net:8088/ae/api/v1',
+   base_url:  'http://localhost:8088/ae/api/v1',
     //client: '100'
-   client: '100',
+   client: '1',
     //authorization: Basic Authorization Header
    authorization: 'Basic QVVUT01JQy9BVVRPTUlDOkFVVE9NSUM=',
     //application_list: Automic VARA object which defines the application list

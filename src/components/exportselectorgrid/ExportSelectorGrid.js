@@ -9,7 +9,11 @@ import {
   GridToolbarExport,
   gridClasses,
 } from '@mui/x-data-grid';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
+import {
+
+  Link
+} from "react-router-dom";
 
 function CustomToolbar() {
   return (
@@ -67,7 +71,7 @@ const columns = [
     width: 150,
   
     renderCell: (rtoStatus) => (
-    <Chip label={rtoStatus.value} color={rtoStatus.value ==="Fullfilled" ? "success": (rtoStatus.value ==="Calculating" ? "primary": "warning")}/>
+    <Chip label={rtoStatus ? "FULFILLED": "VIOLATED"} color={rtoStatus ? "success": "warning"}/>
     // // <Chip label={(run_time.value/60).toFixed(2) > slo_time ? "FULFILLED": "VIOLATED"} color={(run_time.value/60).toFixed(2) < slo_time ? "success": "warning"}/>
 
     )
@@ -78,7 +82,11 @@ const columns = [
     headerName: 'Summary Report',
     width: 150,
     renderCell: (params) => (
-      <Link href={`/report/${params.value}`}>{params.value}</Link>
+      <Link to={`/dr-dashboard/report/${params.value}`} target="_blank"  >{params.value}</Link>
+      //rel="noreferrer noopener"
+  //     <Link to='{`/report/${params.value}`}' target="_blank"> 
+  // <div> {params.value} </div>
+//  </Link>
     )
   },
     
@@ -117,8 +125,10 @@ var slo_time = parseInt(props.data.archive_key1);
 
         rows={props.data}
         columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        pageSize={7}
+        rowsPerPageOptions={[10]}
+        // rowLength="100"
+        // editable="true"
         disableSelectionOnClick
         // components={{
         //   Toolbar: CustomToolbar,

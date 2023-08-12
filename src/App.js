@@ -41,13 +41,13 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-        <Route path="/Home">
+        <Route path="/dr-dashboard/Home">
             <Home />
           </Route>
-          <Route path="/Services">
+          <Route path="/dr-dashboard/services">
             <Services />
           </Route>
-                  <Route path="/Report/:runId">
+                  <Route path="/dr-dashboard/Report/:runId">
             {/* <PDFViewer> */}
             <Report />
             {/* </PDFViewer> */}

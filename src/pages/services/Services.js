@@ -238,18 +238,14 @@ export default function Services(props) {
 
     for (var i = 0; i < history.length; i++) {
       history[i].id = i;
-      console.log("History "+ history[i].runtime);
-      if (history[i].runtime === undefined ) {
-        history[i].rtoStatus = "Calculating";
-      } else if ((history[i].runtime/60).toFixed(2) < history[i].archive_key1) {
-        history[i].rtoStatus = "Fullfilled";
-      } else if ((history[i].runtime/60).toFixed(2) > history[i].archive_key1){
-        history[i].rtoStatus = "Violated";
-      }
-      
-      // history[i].rtoStatus= ((history[i].runtime/60).toFixed(2) < history[i].archive_key1)
+      // if (history[i].runtime === "NaN" ) {
+      //   history[i].rtoStatus = "";}
+      // else
+      history[i].rtoStatus= ((history[i].runtime/60).toFixed(2) < history[i].archive_key1)
       
     }
+
+
     setHistory(history);
   };
 
@@ -350,7 +346,7 @@ export default function Services(props) {
         </Grid>
       )}
       {!loading && (
-        <Grid container className={classes.root} container spacing={1}>
+        <Grid container className={classes.root} spacing={1}>
           {/* <Grid item xs={11} align="right">
             <IconButton aria-label="add an alarm" align="right">
               {" "}
@@ -421,7 +417,7 @@ export default function Services(props) {
             )}
           </Grid>
           <Grid item xs={11} align="center">
-            <Typography variant="overline" component="h4" align="left">
+            {/* <Typography variant="overline" component="h4" align="left">
               Services Information
             </Typography>
             <Card>
@@ -435,7 +431,7 @@ export default function Services(props) {
                   )}
                 </Box>
               </Paper>
-            </Card>
+            </Card> */}
             <Grid item xs={13}>
               <Typography variant="overline" component="h4" align="left">
                 Execution History
