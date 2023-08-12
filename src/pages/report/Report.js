@@ -30,8 +30,7 @@ export default function Report(){
      const [before, setBefore] = React.useState([]);
      const [after, setAfter] = React.useState([]);
      const [execution1, setExecution1] = React.useState([]);
-     const [isLoaded, setIsLoaded] = React.useState(false);
-
+     const [isExeLoaded, setIsExeLoaded] = React.useState(false);
      // console.log("report_runid",runId);
 
      const componentRef = useRef();
@@ -89,7 +88,6 @@ export default function Report(){
 
 
      useEffect(() => {
-          loadChildren1();
           LoadExecution1();
           loadBefore();
           loadAfter();
@@ -113,10 +111,11 @@ export default function Report(){
             options
           );
 
-            setIsLoaded(true);
+            loadChildren1();
+            setIsExeLoaded(true);
             setExecution1(response.data);
-            
           }
+          
           const loadBefore = async () => {
             const options = {
               headers: { Authorization: Config.authorization },
@@ -134,7 +133,6 @@ export default function Report(){
         //     for (var i=0; i < response.data.data.length; i++) {
         //       response.data.data[i].id=i;}
         console.log("hashim", values);
-            setIsLoaded(true);
             setBefore(values);
           };
 
@@ -152,7 +150,6 @@ export default function Report(){
               options
             );
             var values = response.data.data.vara.static_values;
-            setIsLoaded(true);
             setAfter(values);
           };
 
@@ -162,19 +159,9 @@ export default function Report(){
             headers: { Authorization: Config.authorization },
           };
           var response = await axios.get(
-            Config.base_url +
-              "/" +
-              Config.client +
-              "/executions/" +
-              runId +
-              "/children",
+            Config.base_url +"/" +Config.client +"/executions/" +runId +"/children",
             options
           );
-  
-
-     
-
-
           for (var i=0; i < response.data.data.length; i++) {
                response.data.data[i].id=i;}
           console.log("report_children", response.data.data);
@@ -200,7 +187,7 @@ return (
       {/* <Grid align="right">  <Button onClick={handleDownload} >Print</Button></Grid> */}
       <Grid ref={componentRef} >
         <HeadCard/>
-        <MidCard  data={execution1} work={children1} isLoaded={isLoaded}/>
+        <MidCard  data={execution1} work={children1} isExeLoaded={isExeLoaded}/>
         <FootCard data={children1} />
         {/* * Start Code for Before After scenario * */}
         <Grid container spacing={3}>

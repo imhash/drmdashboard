@@ -234,18 +234,14 @@ export default function Services(props) {
       (item) => item.archive_key2 === services[serviceIndex].key
     );
     console.log("services_name", services[serviceIndex].key);
-    console.log("history.....", history);
 
     for (var i = 0; i < history.length; i++) {
       history[i].id = i;
-      // if (history[i].runtime === "NaN" ) {
-      //   history[i].rtoStatus = "";}
-      // else
-      history[i].rtoStatus= ((history[i].runtime/60).toFixed(2) < history[i].archive_key1)
-      
+      history[i].rtoStatus=false;
+      if (!isNaN(history[i].runtime)) 
+        history[i].rtoStatus= ((history[i].runtime/60).toFixed(2) < parseFloat(history[i].archive_key1))
     }
-
-
+    console.log("history before .....", history);
     setHistory(history);
   };
 
@@ -440,9 +436,7 @@ export default function Services(props) {
               <Card>
                 <Paper>
                   <Box>
-                    {history == null ? null : (
-                      <ExportSelectorGrid data={history} />
-                    )}
+                    {history == null ? null : (<ExportSelectorGrid data={history} />)}
                   </Box>
                 </Paper>
               </Card>

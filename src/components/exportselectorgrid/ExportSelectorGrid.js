@@ -26,6 +26,11 @@ function CustomToolbar() {
 const columns = [
     { field: 'title', headerName: 'Direction', width: 180 },
     {
+      field: 'id',
+      headerName: 'Id',
+      width: 200,
+    },
+    {
       field: 'archive_key2',
       headerName: 'Application',
       width: 200,
@@ -69,25 +74,13 @@ const columns = [
     field:  'rtoStatus', // if RTO > runtime ? RTO Fulfilled : RTO VIOLATED
     headerName: 'RTO Status',
     width: 150,
-  
-    renderCell: (rtoStatus) => (
-    <Chip label={rtoStatus ? "FULFILLED": "VIOLATED"} color={rtoStatus ? "success": "warning"}/>
-    // // <Chip label={(run_time.value/60).toFixed(2) > slo_time ? "FULFILLED": "VIOLATED"} color={(run_time.value/60).toFixed(2) < slo_time ? "success": "warning"}/>
-
-    )
-    
+    renderCell: (rtoStatus) => (<Chip label={rtoStatus.value ? "FULFILLED": "VIOLATED"} color={rtoStatus.value ? "success": "warning"}/>) 
   },
   {
     field: 'run_id',
     headerName: 'Summary Report',
     width: 150,
-    renderCell: (params) => (
-      <Link to={`/dr-dashboard/report/${params.value}`} target="_blank"  >{params.value}</Link>
-      //rel="noreferrer noopener"
-  //     <Link to='{`/report/${params.value}`}' target="_blank"> 
-  // <div> {params.value} </div>
-//  </Link>
-    )
+    renderCell: (params) => (<Link to={`/dr-dashboard/report/${params.value}`} target="_blank"  >{params.value}</Link>)
   },
     
   ];
