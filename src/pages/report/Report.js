@@ -88,6 +88,7 @@ export default function Report(){
 
 
      useEffect(() => {
+          loadChildren1();
           LoadExecution1();
           loadBefore();
           loadAfter();
@@ -103,18 +104,12 @@ export default function Report(){
             headers: { Authorization: Config.authorization },
           };
           var response = await axios.get(
-            Config.base_url +
-              "/" +
-              Config.client +
-              "/executions/" +
-              runId,
+            Config.base_url + "/" +Config.client+"/executions/"+runId,
             options
           );
-
-            loadChildren1();
-            setIsExeLoaded(true);
-            setExecution1(response.data);
-          }
+          setIsExeLoaded(true);
+          setExecution1(response.data);
+        }
           
           const loadBefore = async () => {
             const options = {

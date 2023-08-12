@@ -15,6 +15,6 @@ export  const Config = {
    //dashboard_variable: Automic VARA object which defines the dashbaord
    dashboard_variable: 'VARA.DRM.DASHBOARD',
    // tile_size:  Tile Size in Home Page; 2=> 12/2 tiles in one row
-   tile_size: '2', 
+   tile_size: 2, 
 
 }

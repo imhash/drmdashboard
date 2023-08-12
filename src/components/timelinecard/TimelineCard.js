@@ -81,7 +81,7 @@ export default function TimelineCard(props) {
           horizontal: "center",
         }}
       >
-        {props.data.map((item) => {
+        {props.data.map((item, index) => {
           if (item.end_time) {
             var end_temp_time = new Date(item.end_time);
             var end_time = end_temp_time.toLocaleString("en-US", {
@@ -91,7 +91,7 @@ export default function TimelineCard(props) {
 
           // console.log("colorCode",colorCode);
           return (
-            <Timeline align="alternate">
+            <Timeline align="alternate" key={item+index}>
               <TimelineItem>
                 <TimelineOppositeContent>
                   <Typography variant="body2" color="textSecondary">
@@ -114,9 +114,6 @@ export default function TimelineCard(props) {
                         : "grey"
                     }
                   >
-{console.log("timeline", item.status)
-}                   
-
                     {/* <AssignmentTwoToneIcon /> */}
                     <NavigationRoundedIcon  color={
                       item.status < 1800

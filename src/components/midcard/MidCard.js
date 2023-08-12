@@ -131,7 +131,7 @@ export default function Midcard(props) {
             <StorageIcon /><b>Execution: </b>&nbsp;&nbsp;{props.data.archive_key2} 
             {/* <Typography style ={{alignSelf: 'flex-end'}}>yessss</Typography> */}
             </Grid>
-            <Grid container direction="row" alignItems="center" variant="overline" justify="flex-start">
+            <Grid container direction="row" alignItems="center" variant="overline" justifyContent="flex-start">
             <AccessTimeTwoToneIcon /><b>DR Execution Start Time:</b> &nbsp;&nbsp;{start_time} 
             </Grid>
                            

@@ -125,13 +125,13 @@ export default function Tileview(props) {
             <div style={{ margin: "1" }}>
               <Typography
                 align="left"
-                variant="OVERLINE"
+                variant="subtitle1"
                 sx={{ fontSize: 20 }}
                 component="div"
               >
                 <b>{props.data.key}</b>
               </Typography>
-              <Typography align="left" variant="h7" component="div">
+              <Typography align="left" variant="subtitle1" component="div">
                {props.data.value4}
               </Typography>
             </div>
@@ -164,9 +164,9 @@ DR</b></Grid>
                 </Grid>
               </Item>
 
-              
+
             </Box>
-            <Typography align="right" variant="h7" component="div">
+            <Typography align="right" variant="subtitle1" component="div">
                {props.data.value5}
               </Typography>
           </CardContent>

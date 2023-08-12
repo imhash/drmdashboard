@@ -60,7 +60,6 @@ export default function ExecutionCard1() {
                  variant="subtitle1"
                 component="h1"
                 align="center"
-                color="#4a54f1"
                 style={{ fontFamily: 'Montserrat, sans-serif'}}
                 // style={{ paddingLeft: "20px" }}
               >

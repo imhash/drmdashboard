@@ -25,15 +25,15 @@ export default function ReplicationTable(props) {
         {/* <caption>A basic table example with a caption</caption> */}
         <TableHead>
           <TableRow>
-            {props.data.map((lane) => (
-              <TableCell>{lane.value1}</TableCell>
+            {props.data.map((lane, index) => (
+              <TableCell key={lane+index}>{lane.value1}</TableCell>
             ))}
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
-            {props.data.map((lane) => (
-              <TableCell>{lane.value2}</TableCell>
+            {props.data.map((lane, index) => (
+              <TableCell key={lane+index}>{lane.value2}</TableCell>
             ))}
           </TableRow>
         </TableBody>

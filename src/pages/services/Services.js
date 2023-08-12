@@ -334,7 +334,7 @@ export default function Services(props) {
   };
 
   return (
-    <div className="root">
+    <div>
       {/* {setCounter(1)} */}
       {loading && (
         <Grid align="right">
@@ -371,7 +371,7 @@ export default function Services(props) {
                 }, 100);} */}
 
                 {services.map((item, index) => (
-                  <MenuItem value={index}>{item.key}</MenuItem>
+                  <MenuItem key={index} value={index}>{item.key}</MenuItem>
                 ))}
               </Select>
             </FormControl>
@@ -428,7 +428,7 @@ export default function Services(props) {
                 </Box>
               </Paper>
             </Card> */}
-            <Grid item xs={13}>
+            <Grid item >
               <Typography variant="overline" component="h4" align="left">
                 Execution History
               </Typography>

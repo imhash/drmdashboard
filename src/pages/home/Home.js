@@ -98,13 +98,13 @@ return (
 <b>CRITICAL BUSINESS APPS</b>
 </Typography>
 </Grid>
-<Grid container rowSpacing={1} spacing={5} style={{ padding:20 }}
+<Grid container rowspacing={1} spacing={5} style={{ padding:20 }}
 >
 
 
 {dashboard.map((item, index) => (
-    <Grid item xs={6} md={Config.tile_size}>
-    <Tileview data={item}/>
+    <Grid key={"grid_"+item+index} item xs={6} md={Config.tile_size}>
+    <Tileview key={"tileview_"+item+index} data={item}/>
   </Grid>
   ))}
 </Grid>

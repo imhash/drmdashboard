@@ -25,15 +25,15 @@ export default function ReadinessTable(props) {
         {/* <caption>A basic table example with a caption</caption> */}
         <TableHead>
           <TableRow>
-            {props.data.map((row) => (
-              <TableCell>{row.value1}</TableCell>
+            {props.data.map((row, index) => (
+              <TableCell key={row+index}>{row.value1}</TableCell>
             ))}
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
-            {props.data.map((row) => (
-              <TableCell>{row.value2}</TableCell>
+            {props.data.map((row, index) => (
+              <TableCell key={row+index}>{row.value2}</TableCell>
             ))}
           </TableRow>
         </TableBody>

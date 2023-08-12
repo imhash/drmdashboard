@@ -26,11 +26,6 @@ function CustomToolbar() {
 const columns = [
     { field: 'title', headerName: 'Direction', width: 180 },
     {
-      field: 'id',
-      headerName: 'Id',
-      width: 200,
-    },
-    {
       field: 'archive_key2',
       headerName: 'Application',
       width: 200,

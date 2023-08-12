@@ -52,7 +52,6 @@ export default function ExecutionCard1() {
         variant="h5"
         component="h1"
         align="center"
-        color="#4a54f1"
         style={{ fontFamily: 'Montserrat, sans-serif'}}>
         <b>DR EXECUTION SUMMARY</b>
       </Typography>
@@ -96,7 +95,7 @@ export default function ExecutionCard1() {
                   }}
                 />
 
-                <Grid item xs="5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Grid>
+                <Grid item xs={5} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Grid>
                 <Box minWidth={1}>
                   <TextField
                    sx={{ m: 0, width: '50ch' }}
@@ -151,7 +150,7 @@ export default function ExecutionCard1() {
                   color="action" focused
                   variant="standard"
                 />
-                <Grid item xs="5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Grid>
+                <Grid item xs={5} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Grid>
                 <Box minWidth={1}>
                   <TextField
                     fullWidth sx={{ m: 0 }}
