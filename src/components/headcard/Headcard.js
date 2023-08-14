@@ -26,11 +26,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 export default function ExecutionCard1() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  const [alertopen, setAlertOpen] = React.useState(null);
-  const [workflow, setWorkflow] = React.useState([]);
 
 
   const handleClick = () => {

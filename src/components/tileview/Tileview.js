@@ -1,44 +1,15 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import Tabs from "@material-ui/core/Tabs";
-import Chip from "@material-ui/core/Chip";
 import { makeStyles } from "@material-ui/core/styles";
-import { GoogleMapsComponent } from "../../components";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import { PieChart } from "../../components";
-import { HeadCard, MidCard, GridReport1, GridReport2 } from "../../components";
-import HomeIcon from "@mui/icons-material/Home";
-import HomeWorkIcon from "@mui/icons-material/HomeWork";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import ReportIcon from "@mui/icons-material/Report";
-import StorageIcon from "@mui/icons-material/Storage";
-import AccessTimeTwoToneIcon from "@mui/icons-material/AccessTimeTwoTone";
-import AccessTimeFilledTwoToneIcon from "@mui/icons-material/AccessTimeFilledTwoTone";
-import AccountTreeTwoToneIcon from "@mui/icons-material/AccountTreeTwoTone";
-import SpeedTwoToneIcon from "@mui/icons-material/SpeedTwoTone";
-import TimerTwoToneIcon from "@mui/icons-material/TimerTwoTone";
-import FlagTwoToneIcon from "@mui/icons-material/FlagTwoTone";
-import AssignmentTwoToneIcon from "@mui/icons-material/AssignmentTwoTone";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import TrafficTwoToneIcon from "@mui/icons-material/TrafficTwoTone";
-import Switch from "@mui/material/Switch";
+
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { Config } from "../../config/DefaultSettings";
-import { NoEncryption } from "@material-ui/icons";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,18 +37,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "1px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
+// const bull = (
+//   <Box
+//     component="span"
+//     sx={{ display: "inline-block", mx: "1px", transform: "scale(0.8)" }}
+//   >
+//     •
+//   </Box>
+// );
 
 export default function Tileview(props) {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  // const classes = useStyles();
+  // const [value, setValue] = React.useState(0);
 
   const bull = (
     <Box
@@ -98,30 +69,31 @@ export default function Tileview(props) {
     textAlign: "center",
     color: theme.palette.text.secondary,
   }));
-// var siteState = props.data.value1;
+  // var siteState = props.data.value1;
 
   const getBorderColor = (siteState) => {
-    return siteState === "PROD" ? "green" : siteState === "DR" ? "blue" : "orange"   
- 
-     };
+    return siteState === "PROD" ? "green" : siteState === "DR" ? "blue" : "orange"
 
-     const getSiteIcon = (siteState) => {
-      return siteState === "OK" ?  <ArrowDropUpIcon fontSize="large" color="success"></ArrowDropUpIcon> :   <ArrowDropDownIcon fontSize="large" color="error"></ArrowDropDownIcon>   
-   
-       };
+  };
+
+  const getSiteIcon = (siteState) => {
+    return siteState === "OK" ? <ArrowDropUpIcon fontSize="large" color="success"></ArrowDropUpIcon> : <ArrowDropDownIcon fontSize="large" color="error"></ArrowDropDownIcon>
+
+  };
 
   return (
     <Card variant="outlined">
       <React.Fragment>
         <Box
           sx=
-          
-          {{ borderLeft: 7, borderColor: getBorderColor(props.data.value1)
-        
-        }}
-       >
+
+          {{
+            borderLeft: 7, borderColor: getBorderColor(props.data.value1)
+
+          }}
+        >
           <CardContent>
-  
+
             <div style={{ margin: "1" }}>
               <Typography
                 align="left"
@@ -132,7 +104,7 @@ export default function Tileview(props) {
                 <b>{props.data.key}</b>
               </Typography>
               <Typography align="left" variant="subtitle1" component="div">
-               {props.data.value4}
+                {props.data.value4}
               </Typography>
             </div>
 
@@ -145,34 +117,34 @@ export default function Tileview(props) {
             >
               <Item>
                 <Grid container direction="row" alignItems="center">
-                <Grid item><b>PROD</b> </Grid>
+                  <Grid item><b>PROD</b> </Grid>
                   <Grid item>
                     {getSiteIcon(props.data.value2)}
                   </Grid>
-                 
+
                 </Grid>
               </Item>
               <Item>
                 {" "}
                 <Grid container direction="row" alignItems="center">
-                <Grid item><b>
-DR</b></Grid>
+                  <Grid item><b>
+                    DR</b></Grid>
                   <Grid item>
-                  {getSiteIcon(props.data.value3)}
+                    {getSiteIcon(props.data.value3)}
                   </Grid>
-                  
+
                 </Grid>
               </Item>
 
 
             </Box>
             <Typography align="right" variant="subtitle1" component="div">
-               {props.data.value5}
-              </Typography>
+              {props.data.value5}
+            </Typography>
           </CardContent>
-     
+
         </Box>
-    
+
       </React.Fragment>
     </Card>
   );

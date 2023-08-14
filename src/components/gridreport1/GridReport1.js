@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import HomeIcon from '@mui/icons-material/Home';
-import HomeWorkIcon from '@mui/icons-material/HomeWork';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import ReportIcon from '@mui/icons-material/Report';
+
 const columns = [
   { field: 'id', headerName: 'ID', width: 90 },
   {

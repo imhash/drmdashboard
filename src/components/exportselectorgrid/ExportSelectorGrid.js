@@ -9,7 +9,6 @@ import {
   GridToolbarExport,
   gridClasses,
 } from '@mui/x-data-grid';
-// import Link from '@mui/material/Link';
 import {
 
   Link
@@ -24,52 +23,52 @@ function CustomToolbar() {
 }
 
 const columns = [
-    { field: 'title', headerName: 'Direction', width: 180 },
-    {
-      field: 'archive_key2',
-      headerName: 'Application',
-      width: 200,
-    },
-    {
-      field: 'name',
-      headerName: 'Workflow Name',
-      width: 250,
-    },
+  { field: 'title', headerName: 'Direction', width: 180 },
+  {
+    field: 'archive_key2',
+    headerName: 'Application',
+    width: 200,
+  },
+  {
+    field: 'name',
+    headerName: 'Workflow Name',
+    width: 250,
+  },
 
- 
-    {
-      field: 'start_time',
-      headerName: 'Start Time',
-      width: 200,
-      valueFormatter: start_time => moment(start_time?.value).tz(Config.sys_timezone).format('DD/MM/YYYY hh:mm:ss')
-
-    },
-    {
-      field: 'end_time',
-      headerName: 'End Time',
-      width: 200,
-      valueFormatter: end_time => moment(end_time?.value).tz(Config.sys_timezone).format('DD/MM/YYYY hh:mm:ss')
-
-    },
-    {
-      field: 'runtime',
-      headerName: 'Duration',
-      width: 150,
-      renderCell: (runtime) => {
-        return (
-          <div>
-              {(runtime.value/60).toFixed(2)} min(s)
-          </div>
-        );
-      }
-    },
-   
 
   {
-    field:  'rtoStatus', // if RTO > runtime ? RTO Fulfilled : RTO VIOLATED
+    field: 'start_time',
+    headerName: 'Start Time',
+    width: 200,
+    valueFormatter: start_time => moment(start_time?.value).tz(Config.sys_timezone).format('DD/MM/YYYY hh:mm:ss')
+
+  },
+  {
+    field: 'end_time',
+    headerName: 'End Time',
+    width: 200,
+    valueFormatter: end_time => moment(end_time?.value).tz(Config.sys_timezone).format('DD/MM/YYYY hh:mm:ss')
+
+  },
+  {
+    field: 'runtime',
+    headerName: 'Duration',
+    width: 150,
+    renderCell: (runtime) => {
+      return (
+        <div>
+          {(runtime.value / 60).toFixed(2)} min(s)
+        </div>
+      );
+    }
+  },
+
+
+  {
+    field: 'rtoStatus', // if RTO > runtime ? RTO Fulfilled : RTO VIOLATED
     headerName: 'RTO Status',
     width: 150,
-    renderCell: (rtoStatus) => (<Chip label={rtoStatus.value ? "FULFILLED": "VIOLATED"} color={rtoStatus.value ? "success": "warning"}/>) 
+    renderCell: (rtoStatus) => (<Chip label={rtoStatus.value ? "FULFILLED" : "VIOLATED"} color={rtoStatus.value ? "success" : "warning"} />)
   },
   {
     field: 'run_id',
@@ -77,36 +76,22 @@ const columns = [
     width: 150,
     renderCell: (params) => (<Link to={`/dr-dashboard/report/${params.value}`} target="_blank"  >{params.value}</Link>)
   },
-    
-  ];
-  
+
+];
+
 
 export default function ExportSelectorGrid(props) {
-//   const { data } = useDemoData({
-//     dataSet: 'Commodity',
-//     rowLength: 4,
-//     maxColumns: 6,
-//   });
-// var start_temp_time = new Date(props.data.start_time);
-// var starttime = start_temp_time.toLocaleString("en-US", {
-//   timezone: Config.sys_timezone,
-// });
-// console.log("starttime" + starttime);
-// var end_temp_time = new Date(props.data.end_time);
-// var endtime = end_temp_time.toLocaleString("en-US", {
-//   timezone: Config.sys_timezone,
-// });
 
 
 
 
-console.log("asd",props.data);
-var slo_time = parseInt(props.data.archive_key1);
+
+  var slo_time = parseInt(props.data.archive_key1);
 
 
   return (
-    <div 
-    style={{ height: 500, width: 'auto' }}
+    <div
+      style={{ height: 500, width: 'auto' }}
     >
       <DataGrid
         // {...data}
@@ -118,11 +103,11 @@ var slo_time = parseInt(props.data.archive_key1);
         // rowLength="100"
         // editable="true"
         disableSelectionOnClick
-        // components={{
-        //   Toolbar: CustomToolbar,
-        // }}
+      // components={{
+      //   Toolbar: CustomToolbar,
+      // }}
       />
-      
+
     </div>
 
   );

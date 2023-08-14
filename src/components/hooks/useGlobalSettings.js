@@ -8,7 +8,6 @@ const useGlobalSettings =()=> {
 
     useEffect(()=>{
        fetch('config/DefaultSettings.json').then((res)=>res.json()).then((data)=>{
-        console.log("jsonfile", data );
         setGlobalConfig(data)
       })
     },[])

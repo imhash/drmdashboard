@@ -9,28 +9,15 @@ import { LinearProgressWithLabel } from "..";
 import { SimplePopover } from "..";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
-import Popover from "@material-ui/core/Popover";
-import Timeline from "@material-ui/lab/Timeline";
-import TimelineItem from "@material-ui/lab/TimelineItem";
-import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
-import TimelineConnector from "@material-ui/lab/TimelineConnector";
-import TimelineContent from "@material-ui/lab/TimelineContent";
-import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
-import TimelineDot from "@material-ui/lab/TimelineDot";
-import FastfoodIcon from "@material-ui/icons/Fastfood";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import HotelIcon from "@material-ui/icons/Hotel";
-import RepeatIcon from "@material-ui/icons/Repeat";
-import AssignmentTwoToneIcon from "@material-ui/icons/AssignmentTwoTone";
-import { Variants } from "..";
-import { TimelineCard } from "..";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Box from "@material-ui/core/Box";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Config } from "../../config/DefaultSettings";
+import IconButton from '@mui/material/IconButton';
+import PlayCircleOutlineTwoToneIcon from '@mui/icons-material/PlayCircleOutlineTwoTone';
+import Tooltip from '@mui/material/Tooltip';
 
 let success = 0;
 const useStyles = makeStyles({
@@ -44,17 +31,10 @@ function Alert(props) {
 
 export default function ExecutionCard2(props) {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [workflow, setWorkflow] = React.useState([]);
 
-  //const props.data = props.data;
-  // console.log(props.data);
-  // // console.log("action", props.action);
-  // console.log(props.data);
-  // console.log("object", props.object);
-  // console.log("executionWork", props.work);
+
   let successCount = props.work.filter((x) => x.status >= 1900).length;
   let successPercent = (successCount / props.work.length) * 100;
   let success = parseInt(successPercent.toFixed(0));
@@ -65,7 +45,6 @@ export default function ExecutionCard2(props) {
     return null;
   }
   const objectname = props.data.name;
-  // console.log("objectname");
 
   //Date Conversion
   if (props.data.start_time) {
@@ -93,7 +72,6 @@ export default function ExecutionCard2(props) {
       { object_name: props.data.name },
       options
     );
-    // console.log("runid", response.data);
 
     setWorkflow(response.data);
     setOpen(true);
@@ -103,14 +81,8 @@ export default function ExecutionCard2(props) {
 
   const message_workflow = workflow;
   const message_workflow_id = workflow.run_id;
-  const message_workflow_alert = "Succesfully Executed!, RunId:" + message_workflow_id;
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
+  const message_workflow_alert = "Launch Completed Successfully!, RunId:" + message_workflow_id;
 
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
 
   const handleClick = () => {
     loadWorkflow();
@@ -125,9 +97,7 @@ export default function ExecutionCard2(props) {
   };
 
   return (
-    // <div className="App">
-    //     {loading && <Variants />}
-    //     {!loading &&
+
     <Grid item sm xs={12}>
       <Card
         className={classes.root}
@@ -136,10 +106,9 @@ export default function ExecutionCard2(props) {
       >
         <CardContent>
           <Typography color="textSecondary">
-            {props.data.title} 
+            {props.data.title}
           </Typography>
 
-          {/* <Card align="right"> */}
           <div>
             <Box display="flex" alignItems="center">
               <Box width="100%" mr={1}>
@@ -151,12 +120,7 @@ export default function ExecutionCard2(props) {
                 </Typography>
               </Box>
             </Box>
-            {/* </div>   */}
-            {/* <LinearProgressWithLabel /> */}
-            {/* </Card> */}
-            {/* <div> */}
 
-            {/* <TimelineCard/> */}
           </div>
           <Box display="flex" alignItems="center">
             <Box width="100%" mr={1}>
@@ -196,7 +160,7 @@ export default function ExecutionCard2(props) {
                 color="textSecondary"
                 style={{ paddingLeft: "20px" }}
               >
-                <b>Estimated Runtime:</b> {(props.data.estimated_runtime/60).toFixed(2)} min(s)
+                <b>Estimated Runtime:</b> {(props.data.estimated_runtime / 60).toFixed(2)} min(s)
               </Typography>
               <Box width="100%" mr={1}>
                 <Typography
@@ -213,16 +177,18 @@ export default function ExecutionCard2(props) {
             </Box>
           </Box>
           <Box>
-            <Button variant="outlined" onClick={handleClick}>
-              Execute
-            </Button>
+            <Tooltip title="Execute" arrow>
+              <IconButton aria-label="execute" onClick={handleClick} color="primary" size="small" >
+                <PlayCircleOutlineTwoToneIcon /></IconButton>
+            </Tooltip>
+
             <Snackbar
               anchorOrigin={{ vertical: "top", horizontal: "right" }}
               open={open}
               autoHideDuration={6000}
               onClose={handleClose}
             >
- <Alert onClose={handleClose} severity={message_workflow.run_id == null ? "Error" : "Success"}>
+              <Alert onClose={handleClose} severity={message_workflow.run_id == null ? "Error" : "Success"}>
                 {message_workflow.run_id == null ? "Error occured: Checkout the Automic UI" : message_workflow_alert}
               </Alert>
             </Snackbar>
@@ -235,19 +201,8 @@ export default function ExecutionCard2(props) {
             sm={12}
             md={4}
             lg={11}
-            style={{
-              textAlign: "right",
-              // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-              // borderRadius: 1,
-              // border: 0,
-              // color: 'white',
-              // height: 30,
-              // width: 10,
-              // padding: '0 10px',
-              // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-            }}
+
           >
-            {/* <Button>Run Failover</Button> */}
           </Grid>
         </CardActions>
       </Card>

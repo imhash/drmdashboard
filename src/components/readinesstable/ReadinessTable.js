@@ -22,7 +22,6 @@ export default function ReadinessTable(props) {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="caption table">
-        {/* <caption>A basic table example with a caption</caption> */}
         <TableHead>
           <TableRow>
             {props.data.map((row, index) => (

@@ -1,16 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { Services } from "../../pages";
-import axios from "axios";
 import Typography from "@material-ui/core/Typography";
-import { LinearProgressWithLabel } from "../../components";
-import { SimplePopover } from "../../components";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
 import Popover from "@material-ui/core/Popover";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
@@ -19,13 +11,12 @@ import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
-import FastfoodIcon from "@material-ui/icons/Fastfood";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import HotelIcon from "@material-ui/icons/Hotel";
-import RepeatIcon from "@material-ui/icons/Repeat";
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import NavigationRoundedIcon from "@material-ui/icons/NavigationRounded";
-import AssignmentTwoToneIcon from "@material-ui/icons/AssignmentTwoTone";
-import { Variants } from "../../components";
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+
+
 import { Config } from "../../config/DefaultSettings";
 
 // import RepeatIcon from '@material-ui/icons/Repeat';
@@ -59,14 +50,16 @@ export default function TimelineCard(props) {
   const getStatusColor = (status) => {
     if (status === "1900") {
       return "white";
-    } else 
-    return "blue";
+    } else
+      return "blue";
   };
   return (
     <div className="root" align="right">
-      <Button aria-describedby={id} onClick={handleClick} >
-        Monitor Workflow
-      </Button>
+      <Tooltip title="Monitor" arrow>
+        <IconButton aria-label="delete" onClick={handleClick} color="primary">
+          <OndemandVideoIcon /></IconButton>
+      </Tooltip>
+
       <Popover
         id={id}
         open={open}
@@ -89,9 +82,8 @@ export default function TimelineCard(props) {
             });
           }
 
-          // console.log("colorCode",colorCode);
           return (
-            <Timeline align="alternate" key={item+index}>
+            <Timeline align="alternate" key={item + index}>
               <TimelineItem>
                 <TimelineOppositeContent>
                   <Typography variant="body2" color="textSecondary">
@@ -99,29 +91,28 @@ export default function TimelineCard(props) {
                   </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                  {/* <TimelineDot color={colorCode}> */}
-                  {/* <TimelineDot color={item.status < 1300 ? "primary" : item.status < 1900 && item.status > 1300? "secondary" : "grey"}> */}
+
                   <TimelineDot
                     color={
                       (item.status < 1800) && (item.status != 1550)
                         ? 'primary'
                         : item.status === 1900
-                        ? "grey"
-                        : (item.status > 1800) && (item.status > 11900)
-                        ? "secondary"
-                        : item.status === 1550
-                        ? "success"
-                        : "grey"
+                          ? "grey"
+                          : (item.status > 1800) && (item.status > 11900)
+                            ? "secondary"
+                            : item.status === 1550
+                              ? "success"
+                              : "grey"
                     }
                   >
                     {/* <AssignmentTwoToneIcon /> */}
-                    <NavigationRoundedIcon  color={
+                    <NavigationRoundedIcon color={
                       item.status < 1800
                         ? "success"
                         : item.status === 1900
-                        ? "success"
-                        : "error"
-                    }/>
+                          ? "success"
+                          : "error"
+                    } />
                   </TimelineDot>
                   <TimelineConnector />
                 </TimelineSeparator>

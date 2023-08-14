@@ -3,42 +3,15 @@ import React, { useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import { Services } from "../../pages";
-import axios from "axios";
+
 import Typography from "@material-ui/core/Typography";
-import { LinearProgressWithLabel } from "..";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import Box from "@material-ui/core/Box";
-import { ResponsiveDialog } from "..";
+
 import { Config } from "../../config/DefaultSettings";
 
-import { SimplePopover } from "..";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import Popover from "@material-ui/core/Popover";
-import Timeline from "@material-ui/lab/Timeline";
-import TimelineItem from "@material-ui/lab/TimelineItem";
-import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
-import TimelineConnector from "@material-ui/lab/TimelineConnector";
-import TimelineContent from "@material-ui/lab/TimelineContent";
-import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
-import TimelineDot from "@material-ui/lab/TimelineDot";
-import FastfoodIcon from "@material-ui/icons/Fastfood";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import HotelIcon from "@material-ui/icons/Hotel";
-import RepeatIcon from "@material-ui/icons/Repeat";
-import { Variants } from "..";
-import { TimelineCard } from "..";
-import Snackbar from "@material-ui/core/Snackbar";
+
 import MuiAlert from "@material-ui/lab/Alert";
-import TextField from '@mui/material/TextField';
 import Chip from '@mui/material/Chip';
-import Tab from '@mui/material/Tab';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import { Hotel } from "@material-ui/icons";
+
 import StorageIcon from '@mui/icons-material/Storage';
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 import AccessTimeFilledTwoToneIcon from '@mui/icons-material/AccessTimeFilledTwoTone';
@@ -46,9 +19,7 @@ import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import SpeedTwoToneIcon from '@mui/icons-material/SpeedTwoTone';
 import TimerTwoToneIcon from '@mui/icons-material/TimerTwoTone';
 import FlagTwoToneIcon from '@mui/icons-material/FlagTwoTone';
-import AssignmentTwoToneIcon from '@mui/icons-material/AssignmentTwoTone';
-import Divider from '@mui/material/Divider';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+;
 
 
 let success = 0;
@@ -57,9 +28,7 @@ const useStyles = makeStyles({
     minWidth: 650,
   },
 });
-// function Alert(props) {
-//   return <MuiAlert elevation={6} variant="filled" {...props} />;
-// }
+
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -72,7 +41,6 @@ export default function Midcard(props) {
   const [open, setOpen] = React.useState(false);
   const [alertopen, setAlertOpen] = React.useState(null);
   const [workflow, setWorkflow] = React.useState([]);
-  console.log("midcard",props.data);
 
   const handleClick = () => {
     setOpen(true);
@@ -100,22 +68,16 @@ export default function Midcard(props) {
   var slo_time = parseFloat(props.data.archive_key1);
 
 
-  // {(props.data.runtime/60).toFixed(2)} min(s)
-  // let successCount = props.data.filter((x) => x.status >= 1900).length;
-  // let successPercent = (successCount / props.work.length) * 100;
-  // let success = parseInt(successPercent.toFixed(0));
+
   return (
-    // <div className="App">
-    //     {loading && <Variants />}
-    //     {!loading &
+  
     <Grid style={{ padding:10 }} >
          <Typography
                variant="subtitle1"
                 component="h1"
                 align="center"
                  
-                // style={{ background: '#8b0000' , color: "#f2f2f2"}}
-                // style={{ paddingLeft: "20px" }}
+             
                 style={{ fontFamily: 'Montserrat, sans-serif'}}>
                <b>EXECUTION HIGHLIGHTS</b>
               </Typography>
@@ -129,7 +91,6 @@ export default function Midcard(props) {
                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Grid container direction="row" alignItems="center"  >
             <StorageIcon /><b>Execution: </b>&nbsp;&nbsp;{props.data.archive_key2} 
-            {/* <Typography style ={{alignSelf: 'flex-end'}}>yessss</Typography> */}
             </Grid>
             <Grid container direction="row" alignItems="center" variant="overline" justifyContent="flex-start">
             <AccessTimeTwoToneIcon /><b>DR Execution Start Time:</b> &nbsp;&nbsp;{start_time} 

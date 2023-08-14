@@ -25,9 +25,6 @@ export default function ResponsiveDialog() {
   const handleClose = () => {
     setOpen(false);
   };
-//   const handleClick = () => {
-//     setOpen(true);
-//   };
 
   const handleClose1 = (event, reason) => {
     if (reason === 'clickaway') {
@@ -104,26 +101,12 @@ export default function ResponsiveDialog() {
         <DialogTitle id="responsive-dialog-title">{"Use Google's location service?"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Let Google help apps determine location. This means sending anonymous location data to
-            Google, even when no apps are running.
+          
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          {/* <Button autoFocus onClick={handleClose1} color="primary">
-            Disagree
-          </Button> */}
-          {/* <Button onClick={() => {
-         
-          IntegrationNotistack();
-           }} color="primary" autoFocus>
-            Agree
-          </Button> */}
-          <IntegrationNotistack></IntegrationNotistack>
-          {/* <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'right' }} open={open} autoHideDuration={6000} onClose={handleClose1}>
-    <Alert onClose={handleClose1} severity="success">
-      Workflow executed! 
-    </Alert>
-  </Snackbar> */}
+              <IntegrationNotistack></IntegrationNotistack>
+   
         </DialogActions>
       </Dialog>
       

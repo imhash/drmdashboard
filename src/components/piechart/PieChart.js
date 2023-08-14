@@ -36,7 +36,6 @@ export default function PieChart() {
             {
               eventName: "statechange",
               callback: ({ chartWrapper, controlWrapper }) => {
-                console.log("State changed to", controlWrapper?.getState());
               },
             },
           ],

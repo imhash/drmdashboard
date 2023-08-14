@@ -1,10 +1,10 @@
 import React from "react";
-import background1 from "./img/background.jpg";
+// import background1 from "./img/background.jpg";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  
 } from "react-router-dom";
 import {
   AppBar

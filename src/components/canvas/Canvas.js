@@ -9,18 +9,12 @@ import storageSuccess from "./svgs/storage_success1.png";
 import storageFailure from "./svgs/storage_failure1.png";
 import cloudFailure from "./svgs/cloud_failure1.png";
 import cloudSuccess from "./svgs/cloud_success1.png";
-import Typography from "@material-ui/core/Typography";
 const gap = 105;
 const primaryX = 230;
 const LPrimaryX = 300;
-var posX = 450;
-var speed = 2;
 var image_gap = 100;
-const imageX = 50;
 const heartSVG =
   "M0 200 v-200 h200 a100,100 90 0,1 0,200 a100,100 90 0,1 -200,0 z";
-const SVG_PATH = new Path2D(heartSVG);
-
 const drawTypes = {
   applicationSuccess: "/siteIcons/mobile-analytics-success.svg",
   databaseSuccess: "/siteIcons/database-success.svg",

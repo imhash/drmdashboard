@@ -28,8 +28,8 @@ const useStyles = makeStyles({
 // }
 
 const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function ExecutionCard1() {
   const classes = useStyles();
@@ -55,94 +55,89 @@ export default function ExecutionCard1() {
 
   return (
 
-    <Grid  style={{ padding:30 }}>
+    <Grid style={{ padding: 30 }}>
       <Typography
-                 variant="subtitle1"
-                component="h1"
-                align="center"
-                style={{ fontFamily: 'Montserrat, sans-serif'}}
-                // style={{ paddingLeft: "20px" }}
-              >
-               <b>TEST RESULTS</b>
-              </Typography>
-              <Grid style={{ padding:20 }}>
-      <Card
-        className={classes.root}
-        variant="outlined"
-        // style={{ background: "#dbd9d9" }}
+        variant="subtitle1"
+        component="h1"
+        align="center"
+        style={{ fontFamily: 'Montserrat, sans-serif' }}
       >
-        <CardContent>
-        
-          {/* <Card align="right"> */}
-          <div>
-            <Box display="flex" alignItems="center"  sx={{
-        width: 500,
-        maxWidth: '100%',
-      }}>
-              {/* <Box minWidth={120}> */}
+        <b>TEST RESULTS</b>
+      </Typography>
+      <Grid style={{ padding: 20 }}>
+        <Card
+          className={classes.root}
+          variant="outlined"
+        >
+          <CardContent>
+
+            <div>
+              <Box display="flex" alignItems="center" sx={{
+                width: 500,
+                maxWidth: '100%',
+              }}>
 
 
 
-             {/* </Box> */}
-            </Box>
-            
-  
-        <TextField fullWidth sx={{ m: 1 }}
-          id="challenges"
-          label="CHALLENGES ENCOUNTERED"
-          multiline
-          maxRows={5}
-          variant="filled"
-          color="warning" focused
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <WarningIcon  color="warning"/>
-              </InputAdornment>
-            ),
-           
-          }}
-        />
+              </Box>
 
-<TextField fullWidth sx={{ m: 1 }}
-          id="lessons"
-          label="LESSONS LEARNED"
-          multiline
-          maxRows={5}
-          variant="filled"
-          color="success" focused
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <CastForEducationIcon color="success" />
-              </InputAdornment>
-            ),
-           
-          }}
-        />
 
-<TextField fullWidth sx={{ m: 1 }}
-          id="notes"
-          label="ADDITIONAL NOTES"
-          multiline
-          maxRows={5}
-          variant="filled"
-          color="primary" focused
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <DescriptionIcon color="primary" />
-              </InputAdornment>
-            ),
-           
-          }}
-        />
-        
-          </div>
+              <TextField fullWidth sx={{ m: 1 }}
+                id="challenges"
+                label="CHALLENGES ENCOUNTERED"
+                multiline
+                maxRows={5}
+                variant="filled"
+                color="warning" focused
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <WarningIcon color="warning" />
+                    </InputAdornment>
+                  ),
 
-        </CardContent>
-      </Card>
-    </Grid>
+                }}
+              />
+
+              <TextField fullWidth sx={{ m: 1 }}
+                id="lessons"
+                label="LESSONS LEARNED"
+                multiline
+                maxRows={5}
+                variant="filled"
+                color="success" focused
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <CastForEducationIcon color="success" />
+                    </InputAdornment>
+                  ),
+
+                }}
+              />
+
+              <TextField fullWidth sx={{ m: 1 }}
+                id="notes"
+                label="ADDITIONAL NOTES"
+                multiline
+                maxRows={5}
+                variant="filled"
+                color="primary" focused
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <DescriptionIcon color="primary" />
+                    </InputAdornment>
+                  ),
+
+                }}
+              />
+
+            </div>
+
+          </CardContent>
+        </Card>
+      </Grid>
     </Grid>
   );
 }
