@@ -126,7 +126,7 @@ export default function Midcard(props) {
             <Grid container  direction="row" alignItems="center">
             <FlagTwoToneIcon /><b>Execution Summary:</b>  &nbsp;&nbsp; 
             
-            {(props.isExeLoaded && isNaN(run_time)) ? <Chip label="Calculating" color="primary" size="small"/> :
+            {(props.isExeLoaded && isNaN(run_time)) ? <Chip label="NA" color="primary" size="small"/> :
             (props.isExeLoaded && !isNaN(run_time)) && <Chip label={run_time < slo_time ? "FULFILLED": "VIOLATED"} color={run_time < slo_time ? "success": "warning"} size="small"/>}
             
             </Grid>

@@ -68,7 +68,7 @@ const columns = [
     field: 'rtoStatus', // if RTO > runtime ? RTO Fulfilled : RTO VIOLATED
     headerName: 'RTO Status',
     width: 150,
-    renderCell: (rtoStatus) => (<Chip label={rtoStatus.value ? "FULFILLED" : "VIOLATED"} color={rtoStatus.value ? "success" : "warning"} />)
+    renderCell: (rtoStatus) => ( (rtoStatus.value)=="" ? <Chip label="NA" color="primary" /> : <Chip label={rtoStatus.value ? "FULFILLED" : "VIOLATED"} color={rtoStatus.value ? "success" : "warning"} />)
   },
   {
     field: 'run_id',
