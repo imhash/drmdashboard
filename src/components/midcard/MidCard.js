@@ -1,17 +1,10 @@
 
-import React, { useEffect, useRef } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-
 import Typography from "@material-ui/core/Typography";
-
 import { Config } from "../../config/DefaultSettings";
-
-
-import MuiAlert from "@material-ui/lab/Alert";
 import Chip from '@mui/material/Chip';
-
 import StorageIcon from '@mui/icons-material/Storage';
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
 import AccessTimeFilledTwoToneIcon from '@mui/icons-material/AccessTimeFilledTwoTone';
@@ -19,41 +12,11 @@ import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import SpeedTwoToneIcon from '@mui/icons-material/SpeedTwoTone';
 import TimerTwoToneIcon from '@mui/icons-material/TimerTwoTone';
 import FlagTwoToneIcon from '@mui/icons-material/FlagTwoTone';
-;
-
-
-let success = 0;
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
-
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
 
 export default function Midcard(props) {
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
-  const [alertopen, setAlertOpen] = React.useState(null);
-  const [workflow, setWorkflow] = React.useState([]);
 
-  const handleClick = () => {
-    setOpen(true);
-    // loadWorkflow();
-  };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
+  
   var start_temp_time = new Date(props.data.start_time);
   var start_time = start_temp_time.toLocaleString("en-US", {
     timezone: Config.sys_timezone,

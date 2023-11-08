@@ -1,18 +1,16 @@
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
-import MuiAlert from "@material-ui/lab/Alert";
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import InputAdornment from '@mui/material/InputAdornment';
 import WorkIcon from '@mui/icons-material/Work';
 
-let success = 0;
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -20,27 +18,13 @@ const useStyles = makeStyles({
 });
 
 
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
 
 export default function ExecutionCard1() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
 
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
-
+  
   return (
 
     <Grid style={{ padding: 10 }}>

@@ -5,26 +5,19 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Config } from "../../config/DefaultSettings";
-
 import { makeStyles } from "@material-ui/core/styles";
 import { TimelineCard } from "../../components";
-
 import { ReadinessComponent } from "../../components";
 import { ReplicationComponent } from "../../components";
 import { ExecutionCard1 } from "../../components";
 import { ExecutionCard2 } from "../../components";
-import { Canvas } from "../../components";
 import { ExportSelectorGrid } from "../../components";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Card from "@material-ui/core/Card";
-
 import axios from "axios";
-// import { LinearProgress } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import AutorenewIcon from "@material-ui/icons/Autorenew";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,15 +38,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const gap = 5;
-const primaryX = 5;
 
 export default function Services(props) {
   const classes = useStyles();
-
   const [serviceIndex, setServiceIndex] = React.useState(-1);
   const [open, setOpen] = React.useState(false);
-  let refresh_key = 0;
   const [services, setServices] = React.useState([]);
   const [networks, setNetworks] = React.useState(null);
   const [readiness, setReadiness] = React.useState([]);
@@ -64,10 +53,10 @@ export default function Services(props) {
   const [children2, setChildren2] = React.useState([]);
   const [workflow, setWorkflow] = React.useState([]);
   const [history, setHistory] = React.useState([]);
-  const [links, setLinks] = React.useState([]);
+  // const [links, setLinks] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
-  const canvasRef = useRef(null);
-  const [count, setCount] = React.useState(0);
+  // const canvasRef = useRef(null);
+  // const [count, setCount] = React.useState(0);
 
   const handleChange = (event) => {
     setServiceIndex(event.target.value);
@@ -81,14 +70,14 @@ export default function Services(props) {
     setOpen(true);
   };
 
-  const ref = useRef();
-  const useForceUpdate = () => {
-    const [, setState] = React.useState();
-    return setState;
-  };
+  // const ref = useRef();
+  // const useForceUpdate = () => {
+  //   const [, setState] = React.useState();
+  //   return setState;
+  // };
 
   useEffect(() => {
-    if (serviceIndex == -1) {
+    if (serviceIndex === -1) {
       return;
     }
     loadNetworks();
@@ -133,7 +122,7 @@ export default function Services(props) {
       options
     );
     setServices(response.data.data.vara.static_values);
-    if (serviceIndex == -1) {
+    if (serviceIndex === -1) {
       setServiceIndex(0);
     }
   };
@@ -200,7 +189,7 @@ export default function Services(props) {
 
       options
     );
-   
+
     var history = response.data.data.filter(
       (item) => item.archive_key2 === services[serviceIndex].key
     );
@@ -242,7 +231,6 @@ export default function Services(props) {
       "/children",
       options
     );
-    // console.log("children", response.data.data);
     setChildren2(response.data.data);
   };
 

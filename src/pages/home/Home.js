@@ -1,25 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import { styled } from '@mui/material/styles';
 import { Tileview } from "../../components";
 import { Config } from "../../config/DefaultSettings";
 import axios from "axios";
 import Typography from "@material-ui/core/Typography";
 
-
-
-
-
-
-
-
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 export default function Home() {
   const [dashboard, setDashboard] = React.useState([]);
 
@@ -40,8 +25,6 @@ export default function Home() {
 
     loadDashboard();
   }, []);
-
-
 
 
   const loadDashboard = async () => {

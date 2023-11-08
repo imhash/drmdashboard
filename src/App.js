@@ -15,7 +15,6 @@ import {
   Report,
   
 } from "./pages";
-import { PDFViewer } from '@react-pdf/renderer';
 
 export default function App() {
   return (
@@ -68,17 +67,12 @@ export default function App() {
   );
 }
 
-function Inbox() {
-  return <h2>Inbox</h2>;
-}
 
 // function Report() {
 //   return <h2>Starred</h2>;
 // }
 
-function Drafts() {
-  return <h2>Drafts</h2>;
-}
+
 
 function SendEmail() {
   return <h2>SendEmail</h2>;

@@ -1,27 +1,8 @@
 import * as React from 'react';
-
-import { makeStyles } from "@material-ui/core/styles";
-
 import Paper from "@material-ui/core/Paper";
-
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import {
-  
-  GridToolbarContainer,
-  GridToolbarExport,
-  gridClasses,
-} from '@mui/x-data-grid';
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
-
-
-
-
 
 function StatusIcon({ status }) {
   if (status === 'Healthy') {
@@ -31,18 +12,6 @@ function StatusIcon({ status }) {
   }
   return null;
 }
-
-
-
-
-function CustomToolbar() {
-  return (
-    <GridToolbarContainer className={gridClasses.toolbarContainer}>
-      <GridToolbarExport />
-    </GridToolbarContainer>
-  );
-}
-
 
 export default function BeforeCard(props) {
 
@@ -68,7 +37,7 @@ export default function BeforeCard(props) {
               <TableCell>{row.value1}</TableCell>
               <TableCell><StatusIcon status={row.value2} /></TableCell>
               <TableCell>{row.value3}</TableCell>
-                  </TableRow>
+            </TableRow>
           ))}
         </TableBody>
       </Table>
@@ -78,4 +47,3 @@ export default function BeforeCard(props) {
 
 
 
- 

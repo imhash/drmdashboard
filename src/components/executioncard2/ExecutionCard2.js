@@ -1,12 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import { Services } from "../../pages";
 import axios from "axios";
 import Typography from "@material-ui/core/Typography";
-import { LinearProgressWithLabel } from "..";
-import { SimplePopover } from "..";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
@@ -19,7 +15,6 @@ import IconButton from '@mui/material/IconButton';
 import PlayCircleOutlineTwoToneIcon from '@mui/icons-material/PlayCircleOutlineTwoTone';
 import Tooltip from '@mui/material/Tooltip';
 
-let success = 0;
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -44,7 +39,6 @@ export default function ExecutionCard2(props) {
   if (props.data == null) {
     return null;
   }
-  const objectname = props.data.name;
 
   //Date Conversion
   if (props.data.start_time) {

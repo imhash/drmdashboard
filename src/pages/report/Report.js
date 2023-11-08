@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { useReactToPrint } from 'react-to-print';
 import { HeadCard, MidCard, FootCard, Usercard, BeforeCard, AfterCard } from "../../components";
 import Grid from "@material-ui/core/Grid";
 import { Config } from "../../config/DefaultSettings";
@@ -11,7 +10,7 @@ import Tooltip from '@mui/material/Tooltip';
 import {
   useParams
 } from "react-router-dom";
-import { saveAs } from 'file-saver'; // library to save file
+// import { saveAs } from 'file-saver'; // library to save file
 import html2pdf from 'html2pdf.js';
 
 export default function Report() {
@@ -23,9 +22,7 @@ export default function Report() {
   const [isExeLoaded, setIsExeLoaded] = React.useState(false);
 
   const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
+ 
 
   useEffect(() => {
     // Adjust tabular column width before downloading PDF
@@ -56,24 +53,24 @@ export default function Report() {
     html2pdf().set(opt).from(componentRef.current).save();
   };
 
-  const handleDownload = () => {
-    const reportUrl = 'componentRef.current'; // URL of the PDF report
-    const fileName = 'report.pdf'; // name of the file to be saved
+  // const handleDownload = () => {
+  //   const reportUrl = 'componentRef.current'; // URL of the PDF report
+  //   const fileName = 'report.pdf'; // name of the file to be saved
 
-    fetch(reportUrl)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.blob();
-      })
-      .then(blob => {
-        saveAs(blob, fileName);
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  };
+  //   fetch(reportUrl)
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.blob();
+  //     })
+  //     .then(blob => {
+  //       saveAs(blob, fileName);
+  //     })
+  //     .catch(error => {
+  //       console.error('There was a problem with the fetch operation:', error);
+  //     });
+  // };
 
 
   useEffect(() => {
@@ -82,11 +79,7 @@ export default function Report() {
     loadBefore();
     loadAfter();
   }, []);
-  const options = {
-    orientation: 'portrait',
-    unit: 'in',
-    format: [12, 15],
-  };
+  
 
   const LoadExecution1 = async () => {
     const options = {
@@ -104,7 +97,7 @@ export default function Report() {
     const options = {
       headers: { Authorization: Config.authorization },
     };
-    const response = await axios.get(Config.base_url + "/" + Config.client + "/objects/" + "VARA.BEFORE." + runId,
+    const response = await axios.get(Config.base_url + "/" + Config.client + "/objects/VARA.BEFORE." + runId,
       options
     );
     var values = response.data.data.vara.static_values;
@@ -115,7 +108,7 @@ export default function Report() {
     const options = {
       headers: { Authorization: Config.authorization },
     };
-    const response = await axios.get(Config.base_url + "/" + Config.client + "/objects/" + "VARA.AFTER." + runId,
+    const response = await axios.get(Config.base_url + "/" + Config.client + "/objects/VARA.AFTER." + runId,
       options
     );
     var values = response.data.data.vara.static_values;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
@@ -8,7 +8,6 @@ import Box from "@material-ui/core/Box";
 import { Config } from "../../config/DefaultSettings";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
@@ -16,7 +15,6 @@ import PlayCircleOutlineTwoToneIcon from '@mui/icons-material/PlayCircleOutlineT
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
-let success = 0;
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -28,10 +26,10 @@ function Alert(props) {
 
 export default function ExecutionCard1(props) {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
+  // const [anchorEl, setAnchorEl] = React.useState(null);
+  // const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  const [alertopen, setAlertOpen] = React.useState(null);
+  // const [alertopen, setAlertOpen] = React.useState(null);
   const [workflow, setWorkflow] = React.useState([]);
 
 
@@ -43,7 +41,7 @@ export default function ExecutionCard1(props) {
   if (props.data == null) {
     return null;
   }
-  const objectname = props.data.name;
+  // const objectname = props.data.name;
   //Date Conversion
   var start_temp_time = new Date(props.data.start_time);
   var start_time = start_temp_time.toLocaleString("en-US", {
@@ -66,7 +64,7 @@ export default function ExecutionCard1(props) {
       { object_name: props.data.name },
       options
     );
-    const exec_response = response.data;
+    // const exec_response = response.data;
     setWorkflow(response.data);
     setOpen(true);
 

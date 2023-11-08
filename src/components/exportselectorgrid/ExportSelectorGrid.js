@@ -5,22 +5,13 @@ import moment from 'moment-timezone';
 
 import {
   DataGrid,
-  GridToolbarContainer,
-  GridToolbarExport,
-  gridClasses,
+  
 } from '@mui/x-data-grid';
 import {
 
   Link
 } from "react-router-dom";
 
-function CustomToolbar() {
-  return (
-    <GridToolbarContainer className={gridClasses.toolbarContainer}>
-      <GridToolbarExport />
-    </GridToolbarContainer>
-  );
-}
 
 const columns = [
   { field: 'title', headerName: 'Direction', width: 180 },
@@ -68,7 +59,7 @@ const columns = [
     field: 'rtoStatus', // if RTO > runtime ? RTO Fulfilled : RTO VIOLATED
     headerName: 'RTO Status',
     width: 150,
-    renderCell: (rtoStatus) => ( (rtoStatus.value)=="" ? <Chip label="NA" color="primary" /> : <Chip label={rtoStatus.value ? "FULFILLED" : "VIOLATED"} color={rtoStatus.value ? "success" : "warning"} />)
+    renderCell: (rtoStatus) => ((rtoStatus.value) == "" ? <Chip label="NA" color="primary" /> : <Chip label={rtoStatus.value ? "FULFILLED" : "VIOLATED"} color={rtoStatus.value ? "success" : "warning"} />)
   },
   {
     field: 'run_id',
@@ -82,12 +73,7 @@ const columns = [
 
 export default function ExportSelectorGrid(props) {
 
-
-
-
-
-  var slo_time = parseInt(props.data.archive_key1);
-
+  // var slo_time = parseInt(props.data.archive_key1);
 
   return (
     <div

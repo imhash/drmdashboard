@@ -7,42 +7,16 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import Grid from "@material-ui/core/Grid";
 import moment from 'moment-timezone';
-import {
 
-  GridToolbarContainer,
-  GridToolbarExport,
-  gridClasses,
-} from '@mui/x-data-grid';
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
 
-
-function CustomToolbar() {
-  return (
-    <GridToolbarContainer className={gridClasses.toolbarContainer}>
-      <GridToolbarExport />
-    </GridToolbarContainer>
-  );
-}
 export default function FootCard(props) {
 
 
-  var runtime = (props.data.runtime / 60).toFixed(2);
-  var runtime = (props.data.runtime / 60).toFixed(2);
-  var slotime = props.data.archive_key1
-
-
-  const getStatusColor = (status) => {
-    if (status === "1900") {
-      return "white";
-    } else
-      return "blue";
-  };
-
-  const classes = useStyles();
 
   return (
     <Grid>

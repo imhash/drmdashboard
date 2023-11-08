@@ -1,57 +1,35 @@
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import OutlinedInput from '@mui/material/OutlinedInput';
 import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
-import MuiAlert from "@material-ui/lab/Alert";
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
 import WarningIcon from '@mui/icons-material/Warning';
 import CastForEducationIcon from '@mui/icons-material/CastForEducation';
 import DescriptionIcon from '@mui/icons-material/Description';
 
-let success = 0;
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
-// function Alert(props) {
-//   return <MuiAlert elevation={6} variant="filled" {...props} />;
-// }
 
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+
 
 export default function ExecutionCard1() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
-  const [alertopen, setAlertOpen] = React.useState(null);
-  const [workflow, setWorkflow] = React.useState([]);
+  // const [anchorEl, setAnchorEl] = React.useState(null);
+  // const [loading, setLoading] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
+  // const [alertopen, setAlertOpen] = React.useState(null);
+  // const [workflow, setWorkflow] = React.useState([]);
 
 
-  const handleClick = () => {
-    setOpen(true);
-    // loadWorkflow();
-  };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
 
   return (
 

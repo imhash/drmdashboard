@@ -7,14 +7,8 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-const useStyles = makeStyles({
-  table: {
-    minWidth: 400,
-  },
-});
 
 export default function ReadinessTable(props) {
-  const classes = useStyles();
 
   if (props.data == null) {
     return null;

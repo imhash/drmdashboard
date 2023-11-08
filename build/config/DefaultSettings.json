@@ -1,0 +1,12 @@
+
+{
+   "base_url":  "http://lvnkdev001765.bpc.broadcom.net:8088/ae/api/v1",
+   "client": "100",
+   "authorization": "Basic QVVUT01JQy9BVVRPTUlDOkFVVE9NSUM=",
+   "application_list": "VARA.DRM.APPS",
+   "sys_timezone":  "Asia/Dubai",
+   "refresh_interval": "10000",
+   "dashboard_variable": "VARA.DRM.DASHBOARD",
+   "tile_size": "2"
+
+}

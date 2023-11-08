@@ -1,15 +1,8 @@
 import * as React from 'react';
-import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import {
-  GridToolbarContainer,
-  GridToolbarExport,
-  gridClasses,
-} from '@mui/x-data-grid';
-
 
 
 function StatusIcon({ status }) {
